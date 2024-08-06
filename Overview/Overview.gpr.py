@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2013      Nick Hall
+# Copyright (C) 2013-2016      Nick Hall
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -35,6 +35,7 @@ register(GRAMPLET,
          gramplet = 'PersonOverview',
          gramplet_title=_("Overview"),
          navtypes=["Person"],
+         help_url = "Addon:Overview",
          )
 
 register(GRAMPLET,
@@ -49,4 +50,5 @@ register(GRAMPLET,
          gramplet = 'FamilyOverview',
          gramplet_title=_("Overview"),
          navtypes=["Family"],
+         help_url = "Addon:Overview",
          )
