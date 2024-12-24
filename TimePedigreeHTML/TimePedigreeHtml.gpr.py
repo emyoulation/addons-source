@@ -38,9 +38,9 @@ MODULE_VERSION="5.2"
 register(REPORT,
          id = 'TimePedigreeHTML',
          name = _("Timeline Pedigree Report"),
-         description = _("This creates a website showing a "
-            "pedigree with birthday relation"),
-         version = '0.0.5',
+         description = _("Creates an HTML webpage that uses JavaScript to "
+            "show a pedigree block diagram arranged vertically by birth date"),
+         version = '0.0.6',
          gramps_target_version = MODULE_VERSION,
          status = STABLE,
          fname = 'TimePedigreeHtml.py',
@@ -49,5 +49,6 @@ register(REPORT,
          category = CATEGORY_WEB,
          reportclass = 'TimePedigreeHtml',
          optionclass = 'TimePedigreeHtmlOptions',
-         report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI]
+         report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI],
+         help_url ='Addon:Timeline_Pedigree_Report'
 )
