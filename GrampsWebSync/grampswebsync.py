@@ -26,6 +26,7 @@ import os
 import threading
 from collections.abc import Callable
 from datetime import datetime
+from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse
 
@@ -179,6 +180,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
         self.db1 = dbstate.db
         self.db2 = None
+        self._closing = False
         self._download_timestamp = 0
         self._changes: Actions | None = None
         self._sync: WebApiSyncDiffHandler | None = None
@@ -212,6 +214,14 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
     def do_close(self, assistant):
         """Close the assistant."""
         LOG.debug("Closing Gramps Web Sync addon.")
+        self._closing = True
+        if self.db2 is not None:
+            LOG.debug("Closing in-memory remote database.")
+            self.db2.close()
+            self.db2 = None
+        # Clear the diff handler which holds references to both db1 and db2
+        self._sync = None
+        self._changes = None
         position = self.window.get_position()  # crock
         self.assistant.hide()
         self.window.move(position[0], position[1])
@@ -480,7 +490,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
     def handle_error(self, message):
         """Handle an error message during sync."""
-        LOG.error(message)
+        LOG.warning(message)
         self.conclusion.error = True
         self.assistant.next_page()
         self.conclusion.label.set_text(message)
@@ -499,6 +509,8 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
     def get_diff_actions(self) -> None:
         """Download the remote data, import it and compare it to local."""
+        if self._closing:
+            return
         LOG.info("Downloading Gramps XML file.")
         path = self.handle_server_errors(self.api.download_xml)
         if path is None:
@@ -544,8 +556,14 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
     def _async_transfer_media(self):
         """Upload/download media files."""
+        if self._closing:
+            return
         self.handle_server_errors(self.download_files)
+        if self.conclusion.error:
+            return
         self.handle_server_errors(self.upload_files)
+        if self.conclusion.error:
+            return
         self.file_progress_page.set_complete()
         self.assistant.next_page()
 
@@ -640,11 +658,12 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
                     LOG.debug("No changes to apply to local database.")
                 self.sync.commit_actions(actions, trans1, trans2)
                 self.sync_progress_page.handle_local_sync_complete(actions)
-                # force the sync if mode is reset
-                force = self.confirmation.sync_mode in {
-                    MODE_RESET_TO_LOCAL,
-                    MODE_RESET_TO_REMOTE,
-                }
+                # force the sync for all modes: the server-side "object has changed"
+                # check compares against the XML-round-tripped object, which often
+                # differs from the live server object due to serialization artifacts,
+                # causing false-positive 409 conflicts even when no real concurrent
+                # edit has occurred.
+                force = True
                 lang = self.api.get_lang()
                 payload = transaction_to_json(trans2, lang)
         GLib.idle_add(self.async_commit_actions_to_remote, payload, force)
@@ -659,6 +678,8 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self, payload: dict[str, "Any"], force: bool
     ) -> None:
         """Upload/download media files."""
+        if self._closing:
+            return
         LOG.debug("Committing changes to remote database.")
         self.handle_server_errors(
             self.api.commit,
@@ -666,6 +687,8 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             force,
             self.sync_progress_page.update_api_progress,
         )
+        if self.conclusion.error:
+            return
         self.handle_done_syncing_dbs()
 
     def save_timestamp(self):

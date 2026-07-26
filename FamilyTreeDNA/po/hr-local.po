@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-11-15 19:51+0000\n"
+"PO-Revision-Date: 2026-05-11 10:35+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "FamilyTree DNA"
 msgstr "DNK rodoslova"
@@ -54,6 +54,22 @@ msgstr "Pročitaj priručnik za pomoć"
 msgid "FamilyTree DNA Import"
 msgstr "Uvoz DNK-a rodoslova"
 
+msgid ""
+"{} Associations with DNA data created. {} haplogroup Attributes created \n"
+msgstr ""
+"Broj stvorenih veza s DNK podacima: {}. Broj stvorenih atributa haplogrupe: "
+"{} \n"
+
+msgid "No Family Finder File specified"
+msgstr "Nije navedena datoteka za pronalaženje obitelji"
+
+msgid "No Segment File specified"
+msgstr "Nije navedena datoteka segmenata"
+
+msgid "No Associations found in FTdna Notes. No haplogroup Attributes created."
+msgstr ""
+"Nisu pronađene veze u FTdna bilješkama. Svojstva haplogrupe nisu stvoreni."
+
 #, python-format
 msgid "Add %s haplogroup attribute"
 msgstr "Dodaj %s svojstvo haplogrupe"
@@ -68,7 +84,7 @@ msgstr "Stvori bilješku za %s DNK vezu"
 
 #, python-format
 msgid "Add Note to %s DNA Association"
-msgstr "Dodaj bilješku %s DNK vezi"
+msgstr "Dodaj bilješku u %s DNK vezu"
 
 #, python-format
 msgid "Create Source Citation for %s DNA Association"
@@ -80,4 +96,4 @@ msgstr "Stvori citat za %s DNK vezu"
 
 #, python-format
 msgid "Add Citation to %s DNA Association"
-msgstr "Dodaj citat %s DNK vezi"
+msgstr "Dodaj citat u %s DNK vezu"

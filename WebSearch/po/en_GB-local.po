@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-12-03 20:00+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-04-25 14:09+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/en_GB/>\n"
@@ -12,7 +12,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
+
+msgid "Coordinates:"
+msgstr "Coordinates:"
+
+msgid "Place Type:"
+msgstr "Place Type:"
+
+#, python-brace-format
+msgid "Title: {title}"
+msgstr "Title: {title}"
+
+#, python-brace-format
+msgid "Replaced: {keys}"
+msgstr "Replaced: {keys}"
+
+#, python-brace-format
+msgid "Empty: {keys}"
+msgstr "Empty: {keys}"
 
 #, python-format
 msgid "Domain: %s"
@@ -26,14 +44,5 @@ msgstr "Object: %s"
 msgid "Pattern: %s"
 msgstr "Pattern: %s"
 
-#, python-brace-format
-msgid "Title: {title}"
-msgstr "Title: {title}"
-
-#, python-brace-format
-msgid "Replaced: {keys}"
-msgstr "Replaced: {keys}"
-
-#, python-brace-format
-msgid "Empty: {keys}"
-msgstr "Empty: {keys}"
+msgid "Note updated"
+msgstr "Note updated"

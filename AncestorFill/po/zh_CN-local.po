@@ -1,0 +1,38 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS VERSION 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: 2026-04-04 17:51+0000\n"
+"Last-Translator: Zizhuo JIa <jzz0313@outlook.com>\n"
+"Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hans/>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.17-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "AncestorFill"
+msgstr "填充祖先信息"
+
+msgid "Report on the filling of the tree"
+msgstr "关于家族树填充情况的报告"
+
+#, python-format
+msgid "AncestorFill for %s"
+msgstr "为 %s 填充祖先信息"
+
+msgid "Generation "
+msgstr "代 "
+
+msgid "Number of Ancestors found "
+msgstr "找到的祖先数目 "
+
+msgid "Percent of Ancestors found "
+msgstr "已找到的祖先百分比 "

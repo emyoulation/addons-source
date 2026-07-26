@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-09-06 11:01+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-04-14 18:01+0000\n"
+"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
@@ -32,8 +32,14 @@ msgstr "Includi generazioni"
 msgid "Male Background Color"
 msgstr "Colore di fondo degli uomini"
 
+msgid "RGB-color for male box background."
+msgstr "Colore RGB per lo sfondo dei riquadri maschili."
+
 msgid "Female Background"
 msgstr "Colore di fondo delle donne"
+
+msgid "RGB-color for female box background."
+msgstr "Colore RGB per lo sfondo dei riquadri femminili."
 
 msgid "The destination path for generated files."
 msgstr "Il percorso di destinazione per i file generati."
@@ -41,18 +47,40 @@ msgstr "Il percorso di destinazione per i file generati."
 msgid "The destination file name for html content."
 msgstr "Il nome di file di destinazione per il contenuto HTML."
 
+msgid "Generating report..."
+msgstr "Generazione resoconto..."
+
 msgid "Descendant Indented Tree"
 msgstr "Albero indentato dei discendenti"
 
-msgid "Ancestral Fan Chart Options"
-msgstr "Opzioni grafico a ventaglio ascendenza"
+msgid "Invalid Destination Directory"
+msgstr "Directory di destinazione non valida"
 
 #, python-format
-msgid "See %(reference)s : %(spouse)s"
-msgstr "Vedi %(reference)s : %(spouse)s"
+msgid ""
+"Destinaton diretory %s does not exist\n"
+"Do you want to attempt to create it?"
+msgstr ""
+"La directory di destinazione %s non esiste\n"
+"Vuoi crearla?"
 
-msgid "Generating report..."
-msgstr "Generazione resoconto..."
+#, python-brace-format
+msgid "Failed to create {target_path}: {message}"
+msgstr "Non è stato possibile creare {target_path}: {message}"
+
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"Il file di destinazione %s esiste già.\n"
+"Vuoi sovrascriverlo?"
+
+msgid "Default View"
+msgstr "Vista predefinita"
+
+msgid "Expand All"
+msgstr "Espandi tutto"
 
 msgid "Include contraction level"
 msgstr "Includi livello di contrazione"
@@ -69,6 +97,9 @@ msgid "Whether to show duplicate family trees in the report."
 msgstr ""
 "Indica se visualizzare o meno gli alberi familiari duplicati nel resoconto."
 
+msgid "Expanded Row Background Color"
+msgstr "Colore di sfondo della riga espansa"
+
 msgid "Include records marked private"
 msgstr "Includere informazioni marcate come private"
 
@@ -78,8 +109,23 @@ msgstr "Indica se includere oggetti privati."
 msgid "Include Last Name Only"
 msgstr "Includi solo il cognome"
 
+msgid "How to handle living people."
+msgstr "Come trattare persone viventi."
+
+msgid "Whether or not to include people who may have recently died."
+msgstr "Includere o meno persone che possono essere morte di recente."
+
 msgid "Navigation"
 msgstr "Navigazione"
+
+msgid "Contraction/Expansion mechanism"
+msgstr "Meccanismo di Contrazione/Espansione"
+
+msgid "Entire node."
+msgstr "Nodo intero."
+
+msgid "Where to click to expand/contract nodes."
+msgstr "Dove cliccare per espandere/contrarre nodi."
 
 msgid "Auto-generate HREF links for nodes"
 msgstr "Genera automaticamente collegamenti HREF per i nodi"
@@ -93,6 +139,36 @@ msgid "URL prefix to apply to each auto-generated HREF link."
 msgstr ""
 "Prefisso dell'URL da applicare ad ogni collegamento HREF generato "
 "automaticamente."
+
+msgid "No file extension."
+msgstr "Nessuna estensione del file."
+
+msgid ".html"
+msgstr ".html"
+
+msgid ".htm"
+msgstr ".htm"
+
+msgid ".shtml"
+msgstr ".shtml"
+
+msgid ".php"
+msgstr ".php"
+
+msgid ".php3"
+msgstr ".php3"
+
+msgid ".cgi"
+msgstr ".cgi"
+
+msgid "Remove all whitespace."
+msgstr "Rimuovi tutti gli spazi vuoti."
+
+msgid "Replace whitespace with dash(-)."
+msgstr "Sostituisci gli spazi vuoti con il trattino (-)."
+
+msgid "Replace whitespace with underscore(_)"
+msgstr "Sostituisci gli spazi vuoti con l'underscore (_)"
 
 msgid "Generations to generate HREF links"
 msgstr "Generazioni per cui generare collegamenti HREF"
@@ -111,6 +187,9 @@ msgstr "Esclude i coniugi"
 
 msgid "Whether or not to generate links for spouses."
 msgstr "Generare o non generare collegamenti per i coniugi."
+
+msgid "Biography Content"
+msgstr "Contenuto della biografia"
 
 msgid "Text Color"
 msgstr "Colore del testo"
@@ -132,3 +211,18 @@ msgstr "Dimensione dei caratteri del corpo del testo"
 msgid "The font size in pixels for biography body text."
 msgstr ""
 "La dimensione in pixel dei caratteri del testo del corpo della biografia."
+
+msgid "Ancestral Fan Chart Options"
+msgstr "Opzioni grafico a ventaglio ascendenza"
+
+msgid "Paternal Background Color"
+msgstr "Colore di sfondo paterno"
+
+msgid "RGB-color for paternal box background."
+msgstr "Colore RGB per lo sfondo del riquadro paterno."
+
+msgid "Maternal Background"
+msgstr "Colore di sfondo materno"
+
+msgid "RGB-color for maternal box background."
+msgstr "Colore RGB per lo sfondo del riquadro materno."

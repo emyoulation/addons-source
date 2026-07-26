@@ -30,10 +30,6 @@ Import from an Whollygenes - The Master Genealogist (TMG) Project backup file
 # Gramps modules
 #
 # ------------------------------------------------------------------------
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-
-_ = glocale.translation.sgettext
-
 # ------------------------------------------------------------------------
 #
 # Register TMG Importer
@@ -48,13 +44,18 @@ register(
     id="im_sqz",
     name=_("TMG Project Backup"),
     description=_("Import TMG project files"),
-    version = '0.0.84',
+    version = '0.1.3',
     gramps_target_version=grampsversion,
-    include_in_listing=False,
+    include_in_listing=True,
     status=STABLE,
     fname="importtmg.py",
+    authors=["Sam Manzi"],
+    authors_email=[""],
+    maintainers=["Sam Manzi"],
+    maintainers_email=[""],
+    help_url="https://gramps-project.org/wiki/index.php/Addon:TMGimporter",
     import_function="importSqzData",
-    extension="sqz",  # Only detects lower case extensions (TODO: add SQZ uppercase)
+    extension="sqz",
     requires_mod=["dbf"],
 )
 if direct_tmg_pjc_ver_support:
@@ -64,7 +65,7 @@ if direct_tmg_pjc_ver_support:
         id="im_pjc",
         name=_("TMG Unsupported"),
         description=_("Import TMG project files"),
-        version = '0.0.84',
+        version = '0.0.86',
         gramps_target_version=grampsversion,
         include_in_listing=False,
         status=UNSTABLE,
@@ -79,7 +80,7 @@ if direct_tmg_pjc_ver_support:
         id="im_tmg",
         name=_("TMG Unsupported"),
         description=_("Import TMG project files"),
-        version = '0.0.84',
+        version = '0.0.86',
         gramps_target_version=grampsversion,
         include_in_listing=False,
         status=UNSTABLE,
@@ -94,7 +95,7 @@ if direct_tmg_pjc_ver_support:
         id="im_ver",
         name=_("TMG Unsupported"),
         description=_("Import TMG project files"),
-        version = '0.0.84',
+        version = '0.0.86',
         gramps_target_version=grampsversion,
         include_in_listing=False,
         status=UNSTABLE,
