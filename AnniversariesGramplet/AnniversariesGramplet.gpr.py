@@ -22,7 +22,7 @@ register(
     GRAMPLET,
     id="Anniversaries",
     name=_("Anniversaries"),
-    description=_("A gramplet that displays the anniversaries of events"),
+    description=_("A gramplet that displays the anniversaries of the events of this day"),
     status=STABLE,
     version = '1.0.4',
     fname="AnniversariesGramplet.py",
@@ -30,5 +30,5 @@ register(
     gramplet="AnniversariesGramplet",
     gramps_target_version="6.0",
     gramplet_title=_("Anniversaries"),
-    help_url="AnniversariesGramplet",
+    help_url="Addon:AnniversariesGramplet",
 )
